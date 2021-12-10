@@ -7009,7 +7009,7 @@ void dsi_panel_update_gamma_change_write(struct dsi_panel *panel)
 		dimming_gamma_120hz[42] = ((g_2 & 0x03F) << 2) | (b_2 >> 8);
 		dimming_gamma_120hz[43] = b_2 & 0x0FF;
 		for (i = 36; i < 44; i++) {
-		DSI_ERR("dimming_gamma_120hz_10nit[%d] = 0x%02x", i, dimming_gamma_120hz[i]);
+		DSI_DBG("dimming_gamma_120hz_10nit[%d] = 0x%02x", i, dimming_gamma_120hz[i]);
 		}
 		/* GAMMA change Setting (120Hz) 80-500*/
 		for (i = 0; i < 8; i++){
