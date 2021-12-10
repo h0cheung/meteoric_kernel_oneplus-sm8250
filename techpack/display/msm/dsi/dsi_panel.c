@@ -6772,7 +6772,7 @@ void dsi_panel_update_gamma_change_write(struct dsi_panel *panel)
 		dimming_gamma_60hz[29] = ((b_2 & 0x0300) >> 2) | ((r_1 & 0x0300) >> 4) | ((g_1 & 0x0300) >> 6) | ((b_1 & 0x0300) >> 8);
 	} else {/* GAMMA change Setting (120Hz) 80-40-20-10*/
 		for (i = 0; i < 229; i++) {
-		DSI_ERR("120HZ B9_register_value[%d] = 0x%02x", i, b9_register_value_500step[i]);
+		DSI_DBG("120HZ B9_register_value[%d] = 0x%02x", i, b9_register_value_500step[i]);
 		}
 		for (i = 0; i < 186; i++) {
 			b9_register_value[i]=b9_register_value_500step[i];
@@ -6834,7 +6834,7 @@ void dsi_panel_update_gamma_change_write(struct dsi_panel *panel)
 		dimming_gamma_120hz[6] = ((g_2 & 0x03F) << 2) | (b_2 >> 8);
 		dimming_gamma_120hz[7] = b_2 & 0x0FF;
 		for (i = 0; i < 8; i++) {
-		DSI_ERR("dimming_gamma_120hz_80nit[%d] = 0x%02x", i, dimming_gamma_120hz[i]);
+		DSI_DBG("dimming_gamma_120hz_80nit[%d] = 0x%02x", i, dimming_gamma_120hz[i]);
 		}
 		for (i = 0; i < 12; i++)
 			dimming_gamma_120hz[12+i] = b9_register_value[131+i];
