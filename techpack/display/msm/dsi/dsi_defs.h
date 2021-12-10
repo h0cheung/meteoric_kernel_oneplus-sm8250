@@ -51,6 +51,13 @@
 								##__VA_ARGS__)
 #define DSI_DEBUG(fmt, ...)	DRM_DEV_DEBUG(NULL, "[msm-dsi-debug]: "fmt, \
 								##__VA_ARGS__)
+#if 0
+#define DSI_DBG(fmt, args...) \
+	printk(KERN_DEBUG "%s:%d " fmt, __func__, __LINE__, ##args)
+#else
+#define DSI_DBG(fmt, args...)
+#endif
+
 /**
  * enum dsi_pixel_format - DSI pixel formats
  * @DSI_PIXEL_FORMAT_RGB565:
